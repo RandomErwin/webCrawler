@@ -38,6 +38,7 @@ try:
 except Exception as ex:
   print(ex)
 ``` 
+![image](https://github.com/RandomErwin/webCrawler/blob/main/資料庫connect.png)
 
 ## buy iphone
 ``` py
