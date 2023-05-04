@@ -15,6 +15,7 @@ for match in matches:
     result.append(match)
     
 ``` 
+![image](https://github.com/RandomErwin/webCrawler/blob/main/RegEx.png)
 
 ## connection mysql
 ``` py
