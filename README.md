@@ -1,6 +1,6 @@
 # webCrawler
 
 ## Connection
-ˋˋˋpython
+ˋˋˋpy
 db_setting = { "host": ""
 ˋˋˋ
