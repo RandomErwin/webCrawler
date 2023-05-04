@@ -30,7 +30,7 @@ df4['avg'] = (df4['total'] / df4['month']).astype(int)
 df4.sort_values('avg')
 
 ``` 
-![image](https://github.com/RandomErwin/webCrawler/blob/main/更新圖表.png)
+![image](https://github.com/RandomErwin/webCrawler/blob/main/原始圖表.png) ![image](https://github.com/RandomErwin/webCrawler/blob/main/更新圖表.png)
 
 ## content regular expression
 ``` py
