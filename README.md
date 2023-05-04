@@ -28,7 +28,7 @@ df4['total'] = df4['month'] * df4['m_price'] + df4['$']
 df4['avg'] = (df4['total'] / df4['month']).astype(int)
 # 在綁定期間每月平均需付的金額
 df4.sort_values('avg')
-![image](<img width="537" alt="image" src="https://user-images.githubusercontent.com/126307179/236122371-2481cfac-4322-4ee5-9427-c8357e3cb127.png">)
+![image]("https://user-images.githubusercontent.com/126307179/236122371-2481cfac-4322-4ee5-9427-c8357e3cb127.png")
 
 ``` 
 
