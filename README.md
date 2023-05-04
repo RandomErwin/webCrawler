@@ -31,6 +31,23 @@ df4.sort_values('avg')
 
 ``` 
 
+## content regular expression
+``` py
+with open('content.txt', 'w') as file:
+    file.write(content)
+
+import re
+pattern = r'.{3}主文.{3}'
+with open('content.txt', 'r') as file:
+    content = file.read()
+
+matches = re.findall(pattern, content)
+result = []
+for match in matches:
+    result.append(match)
+    
+``` 
+
 ## connection mysql
 ``` py
 db_settings = {"host": "127.0.0.1",
