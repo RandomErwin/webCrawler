@@ -5,7 +5,7 @@ with open('content.txt', 'w') as file:
     file.write(content)
 
 import re
-pattern = r'.{3}主文.{3}'
+pattern = r'([A-Za-z]+)\.'
 with open('content.txt', 'r') as file:
     content = file.read()
 
@@ -15,7 +15,7 @@ for match in matches:
     result.append(match)
     
 ``` 
-![image](https://github.com/RandomErwin/webCrawler/blob/main/正則表達.png)
+![image](https://github.com/RandomErwin/webCrawler/blob/main/正則表達式.png)
 
 ## connection mysql
 ``` py
