@@ -31,10 +31,11 @@ async def fetch(link, session):
         print(salary_.text)
       else:
         print(salary.text)
-
+        
+start_time = time.time()
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
-
+print("Spend Time: " + str(time.time()-start_time) +"sec")
 ```
 ![image](https://github.com/RandomErwin/webCrawler/blob/main/非同步%20104%20job.png)
 
