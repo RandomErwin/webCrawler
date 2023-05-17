@@ -1,4 +1,42 @@
 # webCrawler
+## async 104 job
+``` py
+async def main():
+  links = []
+  for page in range(1, 20):
+    url =f'https://www.104.com.tw/jobs/search/?ro=0&isnew=30&kwop=7&keyword=Python&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&area=6001008000&order=15&asc=0&page={page}&mode=s&jobsource=2018indexpoc&langFlag=0&langStatus=0&recommendJob=1&hotJob=1'
+    links.append(url)
+
+  async with ClientSession() as session:
+    tasks = [asyncio.create_task(fetch(link, session)) for link in links]
+    await asyncio.gather(*tasks)
+
+async def fetch(link, session):
+  async with session.get(link) as response:
+    html = await response.text()
+    soup = BeautifulSoup(html, 'lxml')
+    blocks = soup.find_all('div', {'class': "b-block__left"})
+
+    for block in blocks:
+      job = block.find('a', {'class': "js-job-link"})
+      if job is None:
+        continue
+
+      company = block.find_all('li')[1] 
+      salary_ = block.find('a', {'class': "b-tag--default"})
+      salary = block.find('span', {'class': "b-tag--default"})
+
+      print((job.text, ) + (company.getText().strip(),))
+      if salary is None:
+        print(salary_.text)
+      else:
+        print(salary.text)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+
+```
+
 ## content regular expression
 ``` py
 with open('content.txt', 'w') as file:
