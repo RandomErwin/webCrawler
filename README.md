@@ -17,8 +17,8 @@ async def main():
 
 # sepatate from main() --> more flexibilty on handling program logic and code organization 
 # purpose: GET requests, responses, HTTP contents
-# "async with" come up with "await":pause its execution, allow other tasks to run concurrently
 async def fetch(link, session):
+# "async with" come up with "await":pause its execution, allow other tasks to run concurrently
   async with session.get(link) as response:
     html = await response.text()
     soup = BeautifulSoup(html, 'lxml')
