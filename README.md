@@ -15,6 +15,9 @@ async def main():
     tasks = [asyncio.create_task(fetch(link, session)) for link in links]
     await asyncio.gather(*tasks)
 
+# sepatate from main() --> more flexibilty on handling program logic and code organization 
+# purpose: GET requests, responses, HTTP contents
+# "async with" come up with "await":pause its execution, allow other tasks to run concurrently
 async def fetch(link, session):
   async with session.get(link) as response:
     html = await response.text()
