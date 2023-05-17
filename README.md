@@ -37,7 +37,7 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 print("Spend Time: " + str(time.time()-start_time) +"sec")
 ```
-![image](https://github.com/RandomErwin/webCrawler/blob/main/非同步%20104%20job.png)
+![image](https://github.com/RandomErwin/webCrawler/blob/main/非同步%20104%20job%20sec.png)
 
 ## content regular expression
 ``` py
