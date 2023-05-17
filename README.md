@@ -36,6 +36,7 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 
 ```
+![image](https://github.com/RandomErwin/webCrawler/blob/main/非同步%20104%20job.png)
 
 ## content regular expression
 ``` py
