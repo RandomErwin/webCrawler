@@ -35,7 +35,7 @@ class StockPrice:
             daliy = tuple(body.find_all('td')[0].getText() for body in bodys)
             prices = tuple(body.find_all('td')[1].getText() for body in bodys)
             result.append(daliy + prices)
-        
+
         print(result)
             
 
