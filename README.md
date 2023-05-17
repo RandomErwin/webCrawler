@@ -1,13 +1,17 @@
 # webCrawler
 ## async 104 job
 ``` py
+# mainly purpose: set up event loop and create task
 async def main():
   links = []
   for page in range(1, 20):
     url =f'https://www.104.com.tw/jobs/search/?ro=0&isnew=30&kwop=7&keyword=Python&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&area=6001008000&order=15&asc=0&page={page}&mode=s&jobsource=2018indexpoc&langFlag=0&langStatus=0&recommendJob=1&hotJob=1'
     links.append(url)
 
+# async with: when block finished --> automatically close the session, free up any acquired resourses
+# ClientSession(): aiohttp library, making multiple HTTP requests
   async with ClientSession() as session:
+    # set 1 task to 20 tasks --> gather
     tasks = [asyncio.create_task(fetch(link, session)) for link in links]
     await asyncio.gather(*tasks)
 
