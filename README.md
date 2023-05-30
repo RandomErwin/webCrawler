@@ -11,7 +11,7 @@ async def main():
 # async with: when block finished --> automatically close the session, free up any acquired resourses
 # ClientSession(): aiohttp library, making multiple HTTP requests
   async with ClientSession() as session:
-    # set 1 task to 20 tasks --> gather
+    # set [several numbers] tasks --> gather
     tasks = [asyncio.create_task(fetch(link, session)) for link in links]
     await asyncio.gather(*tasks)
 
